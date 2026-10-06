@@ -9,8 +9,21 @@ const compat = new FlatCompat({
   baseDirectory: __dirname,
 });
 
+const defineConfig = {
+  rules: {
+    "no-undef": "off",
+  },
+};
+
 const eslintConfig = [
-  ...compat.extends("next/core-web-vitals", "next/typescript"),
+  ...compat.extends(
+    "next/core-web-vitals",
+    "next/typescript",
+    "standard",
+    "plugin:tailwindcss/recommended",
+    "prettier",
+  ),
+  defineConfig,
 ];
 
 export default eslintConfig;
