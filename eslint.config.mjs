@@ -9,21 +9,20 @@ const compat = new FlatCompat({
   baseDirectory: __dirname,
 });
 
-const defineConfig = {
-  rules: {
-    "no-undef": "off",
-  },
-};
-
 const eslintConfig = [
-  ...compat.extends(
-    "next/core-web-vitals",
-    "next/typescript",
-    "standard",
-    "plugin:tailwindcss/recommended",
-    "prettier",
-  ),
-  defineConfig,
+  {
+    ignores: [
+      ".next/**",
+      "node_modules/**",
+      "out/**",
+      "dist/**",
+      "build/**",
+      "coverage/**",
+      "*.min.js",
+    ],
+  },
+
+  ...compat.extends("next/core-web-vitals", "next/typescript"),
 ];
 
 export default eslintConfig;

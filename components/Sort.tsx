@@ -12,11 +12,6 @@ import { usePathname, useRouter } from "next/navigation";
 import { sortTypes } from "@/constants";
 
 const Sort = () => {
-  const items = [
-    { label: "Light", value: "light" },
-    { label: "Dark", value: "dark" },
-    { label: "System", value: "system" },
-  ];
   const path = usePathname();
   const router = useRouter();
 
